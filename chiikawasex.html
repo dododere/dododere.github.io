@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mlem</title>
+<link rel="icon" type="image/x-icon" href="../Documents/code/favicon.ico">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../Documents/code/the background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+    background: rgba(255, 240, 245, 0.98);
+    padding: 40px;
+    border-radius: 20px;
+    border: 3px solid #FFB6D9;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #FF1493;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #FF69B4;
+    margin-bottom: 25px;
+  }
+  
+  a {
+    color: #FF1493;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .music-section {
+    margin-top: 30px;
+  }
+  
+  .click-me {
+    font-size: 0.9em;
+    color: #FF69B4;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  #musicBtn {
+    font-size: 60px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 15px;
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  }
+  
+  #musicBtn:hover {
+    transform: scale(1.15) rotate(10deg);
+  }
+  
+  #musicBtn:active {
+    transform: scale(0.95);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Hiiii Helloooo Hiiii</h1>
+  <p>My (<a href="https://github.com/MahanBig">Bf</a>) is very awesome btw</p>
+  <img src="../Documents/code/me and him.jpg " alt="chiikawaseal">
+  
+  <div class="music-section">
+    <div class="click-me">✨ click me ✨</div>
+    <button id="musicBtn">🫧</button>
+  </div>
+</div>
+
+<audio id="musicPlayer">
+  <source src="../Documents/code/the world we should have gotten _ frutiger aero playlist.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const musicBtn = document.getElementById('musicBtn');
+  const musicPlayer = document.getElementById('musicPlayer');
+  let isPlaying = false;
+
+  musicBtn.addEventListener('click', function() {
+    if (isPlaying) {
+      musicPlayer.pause();
+      isPlaying = false;
+    } else {
+      musicPlayer.play();
+      isPlaying = true;
+    }
+  });
+</script>
+</body>
+</html>
